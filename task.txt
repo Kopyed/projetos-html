@@ -1,0 +1,73 @@
+
+TASKKILL [/S sistema [/U usu†rio [/P [senha]]]]
+         { [/FI filtro] [/PID processid | /IM imagename] } [/T] [/F]
+
+Descriá∆o:
+    Esta ferramenta Ç usada para finalizar tarefas por identificaá∆o de
+processo (PID) ou nome de imagem.
+
+Lista de parÉmetros:
+    /S   system            Especifica o sistema remoto ao qual se conectar.
+
+    /U   [dom°nio\]usu†rio Especifica o contexto de usu†rio em que
+                           o comando deve ser executado.
+
+    /P   [senha]           Especifica a senha para o contexto de
+                           usu†rio. Solicita entrada, caso omitido.
+
+    /FI   filtro           aplica um filtro para selecionar um conjunto
+                           de tarefas.
+                           Permite que "*" seja usado. Por exemplo:
+                           nome_imagem eq acme*
+
+    /PID   processid       especifica a PID do processo a ser finalizado.
+                           Use TaskList para obter a PID.
+
+    /IM   imagename        Especifica o nome de imagem do processo a ser
+                           finalizado. O caractere curinga '*' pode ser
+                           usado para especificar todas as tarefas ou
+                           nomes de imagem.
+
+    /T                     Finaliza o processo especificado e quaisquer
+                           processos filho iniciados por ele.
+
+    /F                     Especifica a finalizaá∆o foráada do(s)
+                           processo(s).
+
+    /?                     Exibe esta mensagem da Ajuda.
+
+Filtro(s):
+  Nome do filtro  Operadores v†lidos        Valor(es) v†lido(s)
+  --------------  ------------------        ------------------------------
+    STATUS        eq, ne                    EM EXECUÄ«O |
+                                            N«O RESPONDENDO | DESCONHECIDO
+    IMAGENAME     eq, ne                    Qualquer nome de imagem.
+    PID           eq, ne, gt, lt, ge, le    Valor de PID.
+    SESSION       eq, ne, gt, lt, ge, le    N£mero de sess∆o.
+    CPUTIME       eq, ne, gt, lt, ge, le    Hor†rio de CPU no formato
+                                            de hh:mm:ss.
+                                            hh - horas,
+                                            mm - minutos, ss - segundos
+    MEMUSAGE      eq, ne, gt, lt, ge, le    Uso de mem¢ria em KB.
+    USERNAME      eq, ne                    Nome de usu†rio em formato
+                                            [dom°nio\]usu†rio
+    MODULES       eq, ne                    Nome da DLL
+    SERVICES      eq, ne                    Nome de serviáo
+    WINDOWTITLE   eq, ne                    T°tulo de janela
+
+    OBS.
+    ----
+    1) O caractere curinga '*' para a chave /IM Ç aceito somente quando um
+       filtro Ç aplicado.
+    2) O encerramento de processos remotos sempre Ç foráado (/F).
+    3) os filtros "WINDOWTITLE" e "STATUS" n∆o s∆o considerados quando um
+       computador remoto Ç especificado.
+
+Exemplos:
+    TASKKILL /IM notepad.exe
+    TASKKILL /PID 1230 /PID 1241 /PID 1253 /T
+    TASKKILL /F /IM cmd.exe /T 
+    TASKKILL /F /FI "PID ge 1000" /FI "WINDOWTITLE ne untitle*"
+    TASKKILL /F /FI "USERNAME eq NT AUTHORITY\SYSTEM" /IM notepad.exe
+    TASKKILL /S sistema /U dom°nio\usu†rio /FI "USERNAME ne NT*" /IM *
+    TASKKILL /S sistema /U usu†rio /P senha /FI "IMAGENAME eq note*"

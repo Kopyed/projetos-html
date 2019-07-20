@@ -39,19 +39,24 @@ background-color: #737578;
 .t1{background-color: #737578;
 }
 
-.img{width: 100%;height: 400px;}
+.t2{
+  left:69%;
+}
+
+.img{width: 100%;height: 400px;
+}
 
 .formularios{
 position: relative;
 top:100px;
-left: 100px;
-width: 1000px;
+left: 210px;
+width: 760px;
 height: 300px;
 }
 
 input{
-   border:none;
-  border-bottom: 2px solid #197fe6;
+ border:none;
+border-bottom: 2px solid #197fe6;
 }
 .cliente , .endereco{
   width: 500px;

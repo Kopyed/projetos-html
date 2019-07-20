@@ -58,6 +58,26 @@ input{
  border:none;
 border-bottom: 2px solid #197fe6;
 }
+
+.btn{ top:30px;
+  font-size:11pt;
+  height: 30px;
+  width: 100px;
+  position: relative;
+  color: white;
+}
+
+.btn-cadastro{
+  background: #197fe6;
+  border:1px solid #197fe6;
+}
+
+.btn-limpar{
+  background: rgb(217, 47, 28);
+  border: 1px solid  rgb(217, 47, 28);
+  left: 10px;
+}
+
 .cliente , .endereco{
   width: 500px;
 }

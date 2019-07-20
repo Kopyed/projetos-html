@@ -1,0 +1,61 @@
+*{
+  padding: 0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+
+}
+a{
+  text-decoration: none;
+}
+.texto{
+text-align: center;
+position: relative;
+top:-10px;
+color:#5e1616;
+}
+
+header{
+background-color:  rgb(217, 47, 28);
+}
+
+.cabecalho{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 50px;
+  left: 70%;
+  padding-left: 30px;
+}
+
+.cabecalho:hover{
+background-color: #737578;
+}
+
+.l1 , .l2{
+  position: relative;
+  top:20px;
+  right: 15px;
+}
+
+.t1{background-color: #737578;
+}
+
+.img{width: 100%;height: 400px;}
+
+.formularios{
+position: relative;
+top:100px;
+left: 100px;
+width: 1000px;
+height: 300px;
+}
+
+input{
+   border:none;
+  border-bottom: 2px solid #197fe6;
+}
+.cliente , .endereco{
+  width: 500px;
+}
+.cpf{
+  width: 200px;
+}
